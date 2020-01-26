@@ -1,2 +1,2 @@
-print("Hello World!")
-print("Hello World From MacOs!")
+name = '    hello world    '
+print(name.lstrip())
