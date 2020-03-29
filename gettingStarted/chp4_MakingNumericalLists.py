@@ -3,8 +3,11 @@
 #     print(val)
 
 for val in range (1, 61):
-    txt = 'START /WAIT \"\" \"C:\\Program Files\\encevis\\encevis.exe\" \"/PID:PAT' + str(val) + '\" \"/TID:REC' + str(val) + '\" \"/FNAME:C:\\Users\\aslaptop1\\Desktop\\EDFNic\\EEG' + str(val) + '.edf\" \"/PLUGINS:EpiSpike\" \"/SILENT:TRUE\"'
-    txt1 = '\nIF %ERRORLEVEL% NEQ 0 ECHO Error\n' + 'IF %ERRORLEVEL% EQU 0 ECHO Success'
+    txt = 'START /WAIT \"\" \"C:\\Program Files\\encevis\\encevis.exe\" \"/PID:PAT' + str(val) + \
+          '\" \"/TID:REC' + str(val) + '\" \"/FNAME:C:\\Users\\aslaptop1\\Desktop\\EDFNic\\EEG' + str(val) + \
+          '.edf\" \"/PLUGINS:EpiSpike\" \"/SILENT:TRUE\"'
+    txt1 = '\nIF %ERRORLEVEL% NEQ 0 ECHO Error\n' + \
+           'IF %ERRORLEVEL% EQU 0 ECHO Success'
 
     # "" "C:\Program Files\encevis\encevis.exe" "/PID:PAT1" "/TID:REC1" "/FNAME:C:\Study\EEG.edf" "/PLUGINS:EpiSpike" "/SILENT:TRUE"
 
