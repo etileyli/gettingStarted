@@ -13,4 +13,4 @@ import os
 for val in range(1, 10):
 	print("with a " + str(val))
 
-input(v)
+# commit from Home-win10-atom
