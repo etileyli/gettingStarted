@@ -1,29 +1,59 @@
-class Dog:
-    """A Simple atemp to make a dog."""
+class Car:
+    """A simple attempt to represent a car"""
 
-    def __init__(self, name, age):
-        """Initialize name and age attributes."""
-        self.name = name
-        self.age = age
+    def __init__(self, make, model, year):
+        """Initialize attributes to define a car"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
 
-    def sit(self):
-        """Simulate a dog in response to a command."""
-        print(self.name.title() + " is now sitting.")
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        return long_name.title()
 
-    def roll_over(self):
-        """Simulate rolling over in response to a command."""
-        print(self.name.title() + " is now rolling over.")
+    def read_odometer(self):
+        """Print a statement showing the car's mileage."""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+    def update_odometer(self, mileage):
+        """Set the odometer reading to the given value."""
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You cannot roll back an odometer.")
+
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading"""
+        if miles >= 0:
+            self.odometer_reading += miles
+        else:
+            print("Increment value should be non-negative.")
+
+class ElectricCar(Car):
+    """Represents aspects of a car specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """Initializes the attributes of parent class."""
+        super().__init__(make, model, year)
 
 
-my_dog = Dog('miskoş', '3.5')
-my_cat = Dog('misiklet', '3.5')
+my_new_car = Car('Renault', 'Clio', 2016)
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
+my_new_car.update_odometer(47)
+my_new_car.read_odometer()
+my_new_car.update_odometer(46)
+my_new_car.read_odometer()
+my_new_car.increment_odometer(50)
+my_new_car.read_odometer()
+my_new_car.increment_odometer(-25)
+my_new_car.read_odometer()
 
-print("My dog's name is " + my_dog.name.title() + ".")
-print("My dog is " + str(my_dog.age) + " years old.")
+print()
 
-my_dog.sit()
-my_dog.roll_over()
-
-my_cat.sit()
-my_cat.roll_over()
-
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
