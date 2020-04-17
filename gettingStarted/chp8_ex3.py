@@ -5,8 +5,10 @@ def make_pizza(size, *toppings):
     for topping in toppings:
         print("- " + topping)
 
+
 make_pizza(16, 'pepperoni')
 make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
 
 def user_profile(first, last, **user_info):
     """Build a dictionary that contains everything we know about the user."""
@@ -17,5 +19,6 @@ def user_profile(first, last, **user_info):
         profile[key] = value
     return profile
 
-prof = user_profile ('albert', 'einstein', location= 'Princeton', major='physics')
+
+prof = user_profile('albert', 'einstein', location='Princeton', major='physics')
 print(prof)
